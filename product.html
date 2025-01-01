@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Box icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <!-- Custom StyleSheet -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Boy’s section </title>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <div class="top-nav">
+      <div class="container d-flex">
+        
+        <ul class="d-flex">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="navigation">
+      <div class="nav-center container d-flex">
+        <a href="index.html" class="logo"><h1> AMH </h1></a>
+
+        <ul class="nav-list d-flex">
+          <li class="nav-item">
+            <a href="indexx.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="product.html" class="nav-link">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a href="#terms" class="nav-link">Terms</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+          <li class="icons d-flex">
+            <a href="login.html" class="icon">
+              <i class="bx bx-user"></i>
+            </a>
+            <div class="icon">
+              <i class="bx bx-search"></i>
+            </div>
+            <div class="icon">
+              <a href="wishlist.html">
+                <i class="bx bx-heart"></i>
+              </a>
+              <span class="d-flex">0</span>
+            </div>
+            <a href="cart.html" class="icon">
+              <i class="bx bx-cart"></i>
+              <span class="d-flex">0</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="icons d-flex">
+          <a href="login.html" class="icon">
+            <i class="bx bx-user"></i>
+          </a>
+          <div class="icon">
+            <i class="bx bx-search"></i>
+          </div>
+          <a href="./wishlist.html" class="icon">
+            <i class="bx bx-heart"></i>
+            <span class="d-flex wishlist-count">0</span>
+          </a>
+          
+          <a href="cart.html" class="icon">
+            <i class="bx bx-cart"></i>
+            <span class="d-flex">0</span>
+          </a>
+        </div>
+
+        <div class="hamburger">
+          <i class="bx bx-menu-alt-left"></i>
+        </div>
+      </div>
+    </div>
+    
+    <!-- All Products -->
+    <section class="section all-products" id="products">
+      <div class="top container">
+        <h1>All Products</h1>
+        <form>
+          <select>
+            <option value="1">Defualt Sorting</option>
+            <option value="2">Sort By Price</option>
+            <option value="3">Sort By Popularity</option>
+            <option value="4">Sort By Sale</option>
+            <option value="5">Sort By Rating</option>
+          </select>
+          <span><i class="bx bx-chevron-down"></i></span>
+        </form>
+      </div>
+      <div class="product-center container">
+
+        <div class="product-item" id="product0" data-category="MEN'S CLOTHES" data-name="yellow sport wear" data-price="$150">
+          <div class="overlay">
+            <a href="productDetails.html" class="product-thumb">
+              <img src="./images/product-7.jpg" alt="" />
+            </a>
+            <span class="discount">30%</span>
+          </div>
+          <div class="product-info">
+            <span>MEN'S CLOTHES</span>
+            <a href="productDetails.html">yellow sport wear</a>
+            <h4>$150</h4>
+          </div>
+          <ul class="icons">
+            <li><i class="bx bx-heart" onclick="addToWishlist('product0')"></i></li>
+            <li><i class="fas fa-heart-crack" onclick="toggleWishlist('product0')"></i></li>
+            <li><i class="bx bx-cart"></i></li>
+          </ul>
+        </div>
+
+        <div class="product-item" id="product1" data-category="MEN'S CLOTHES" data-name="red bag" data-price="$50">
+          <div class="overlay">
+            <a href="" class="product-thumb">
+              <img src="./images/product-2.jpg" alt="" />
+            </a>
+            <span class="discount">40%</span>
+          </div>
+          <div class="product-info">
+            <span>MEN'S CLOTHES</span>
+            <a href="">red bag</a>
+            <h4>$50</h4>
+          </div>
+          <ul class="icons">
+            <li><i class="bx bx-heart" onclick="addToWishlist('product1')"></i></li>
+            <li><i class="fas fa-heart-crack" onclick="toggleWishlist('product1')"></i></li>
+            <li><i class="bx bx-cart"></i></li>
+          </ul>
+        </div>
+
+        <div class="product-item" id="product2" data-category="MEN'S CLOTHES" data-name="purple hoodie" data-price="$120">
+          <div class="overlay">
+            <a href="" class="product-thumb">
+              <img src="./images/product-3.jpg" alt="" />
+            </a>
+            <span class="discount">40%</span>
+          </div>
+          <div class="product-info">
+            <span>MEN'S CLOTHES</span>
+            <a href="">purple hoodie</a>
+            <h4>$120</h4>
+          </div>
+          <ul class="icons">
+            <li><i class="bx bx-heart" onclick="addToWishlist('product2')"></i></li>
+            <li><i class="fas fa-heart-crack" onclick="toggleWishlist('product2')"></i></li>
+            <li><i class="bx bx-cart"></i></li>
+          </ul>
+        </div>
+
+        <div class="product-item" id="product3" data-category="MEN'S CLOTHES" data-name="white sport wear" data-price="$100">
+          <div class="overlay">
+            <a href="" class="product-thumb">
+              <img src="./images/product-4.jpg" alt="" />
+            </a>
+          </div>
+          <div class="product-info">
+            <span>MEN'S CLOTHES</span>
+            <a href="">white sport wear</a>
+            <h4>$100</h4>
+          </div>
+          <ul class="icons">
+            <li><i class="bx bx-heart" onclick="addToWishlist('product3')"></i></li>
+            <li><i class="fas fa-heart-crack" onclick="toggleWishlist('product3')"></i></li>
+            <li><i class="bx bx-cart"></i></li>
+          </ul>
+        </div>
+
+        <div class="product-item" id="product4" data-category="MEN'S CLOTHES" data-name="black hoodie" data-price="$90">
+          <div class="overlay">
+            <a href="" class="product-thumb">
+              <img src="./images/product-5.jpg" alt="" />
+            </a>
+            <span class="discount">40%</span>
+          </div>
+          <div class="product-info">
+            <span>MEN'S CLOTHES</span>
+            <a href="">black hoodie</a>
+            <h4>$90</h4>
+          </div>
+          <ul class="icons">
+            <li><i class="bx bx-heart" onclick="addToWishlist('product4')"></i></li>
+            <li><i class="fas fa-heart-crack" onclick="toggleWishlist('product4')"></i></li>
+            <li><i class="bx bx-cart"></i></li>
+          </ul>
+        </div>
+
+        <div class="product-item" id="product5" data-category="MEN'S CLOTHES" data-name="black sport wear" data-price="$100">
+          <div class="overlay">
+            <a href="" class="product-thumb">
+              <img src="./images/product-6.jpg" alt="" />
+            </a>
+          </div>
+          <div class="product-info">
+            <span>MEN'S CLOTHES</span>
+            <a href="">black sport wear</a>
+            <h4>$100</h4>
+          </div>
+          <ul class="icons">
+            <li><i class="bx bx-heart" onclick="addToWishlist('product5')"></i></li>
+            <li><i class="fas fa-heart-crack" onclick="toggleWishlist('product5')"></i></li>
+            <li><i class="bx bx-cart"></i></li>
+          </ul>
+        </div>
+
+        <div class="product-item" id="product6" data-category="MEN'S CLOTHES" data-name="original yellow sport wear" data-price="$250">
+          <div class="overlay">
+            <a href="" class="product-thumb">
+              <img src="./images/product-7.jpg" alt="" />
+            </a>
+            <span class="discount">40%</span>
+          </div>
+          <div class="product-info">
+            <span>MEN'S CLOTHES</span>
+            <a href="">original yellow sport wear</a>
+            <h4>$250</h4>
+          </div>
+          <ul class="icons">
+            <li><i class="bx bx-heart" onclick="addToWishlist('product6')"></i></li>
+            <li><i class="fas fa-heart-crack" onclick="toggleWishlist('product6')"></i></li>
+            <li><i class="bx bx-cart"></i></li>
+          </ul>
+        </div>
+        
+        <div class="product-item" id="product7" data-category="MEN'S CLOTHES" data-name="original white sport wear" data-price="$250" >
+          <div class="overlay">
+            <a href="" class="product-thumb">
+              <img src="./images/product-4.jpg" alt="" />
+            </a>
+          </div>
+          <div class="product-info">
+            <span>MEN'S CLOTHES</span>
+            <a href="">original white sport wear</a>
+            <h4>$250</h4>
+          </div>
+          <ul class="icons">
+            <li><i class="bx bx-heart" onclick="addToWishlist('product7')"></i></li>
+            <li><i class="fas fa-heart-crack" onclick="toggleWishlist('product7')"></i></li>
+            <li><i class="bx bx-cart"></i></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+    <section class="pagination">
+      <div class="container">
+        <span>1</span> <span>2</span> <span>3</span> <span>4</span>
+        <span><i class="bx bx-right-arrow-alt"></i></span>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="row">
+        <div class="col d-flex">
+          <h4>INFORMATION</h4>
+          <a href="">About us</a>
+          <a href="">Contact Us</a>
+          <a href="">Term & Conditions</a>
+          <a href="">Shipping Guide</a>
+        </div>
+        <div class="col d-flex">
+          <h4>USEFUL LINK</h4>
+          <a href="">Online Store</a>
+          <a href="">Customer Services</a>
+          <a href="">Promotion</a>
+          <a href="">Top Brands</a>
+        </div>
+        <div class="col d-flex">
+          <span><i class="bx bxl-facebook-square"></i></span>
+          <span><i class="bx bxl-instagram-alt"></i></span>
+          <span><i class="bx bxl-github"></i></span>
+          <span><i class="bx bxl-twitter"></i></span>
+          <span><i class="bx bxl-pinterest"></i></span>
+        </div>
+      </div>
+    </footer>
+    <script>
+  function toggleWishlist(productId) {
+    var wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+    if (isProductInWishlist(wishlist, productId)) {
+        removeFromWishlist(productId);
+        alert('Item removed from wishlist!');
+    } else {
+        alert('This item is not in your wishlist.');
+    }
+}
+
+function removeFromWishlist(productId) {
+    var wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+    // Check if the product is in the wishlist
+    var index = wishlist.findIndex(item => item.id === productId);
+
+    if (index !== -1) {
+        // Remove the item from the wishlist
+        wishlist.splice(index, 1);
+
+        // Save the updated wishlist to local storage
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
+        // Update the UI and count
+        updateWishlistUI(wishlist);
+        
+        // Update the wishlist count in the UI after removing an item
+        updateWishlistCount(wishlist.length);
+
+        // Delay the message to ensure it is displayed
+        setTimeout(function () {
+            var messageContainer = document.getElementById('wishlist-message');
+            if (messageContainer) {
+                messageContainer.textContent = 'Item removed from wishlist!';
+                setTimeout(function () {
+                    messageContainer.textContent = '';
+                }, 3000); // Clear the message after 3 seconds
+            }
+        }, 10);
+    }
+}
+
+
+
+
+  // Function to add a product to the wishlist
+  function addToWishlist(productId) {
+    // Retrieve product information based on productId
+    var productInfo = getProductInfo(productId);
+
+    // Retrieve the wishlist from local storage
+    var wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+    // Check if the product is not already in the wishlist
+    if (!isProductInWishlist(wishlist, productId)) {
+      // Add the product to the wishlist
+      wishlist.push({
+        id: productId,
+        info: productInfo
+      });
+
+      // Update the wishlist count in the UI
+      updateWishlistCount(wishlist.length);
+
+      // Save the updated wishlist to local storage
+      localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
+      // Optionally, you can notify the user that the item was added
+      alert('Item added to wishlist!');
+    } else {
+      // Inform the user that the product is already in the wishlist
+      alert('This item is already in your wishlist.');
+    }
+  }
+
+  // Function to retrieve product information based on productId
+  function getProductInfo(productId) {
+    // Retrieve product information based on productId
+    var productElement = document.getElementById(productId);
+
+    if (productElement) {
+      // Retrieve category, name, and price from data attributes
+      var category = productElement.getAttribute('data-category');
+      var name = productElement.getAttribute('data-name');
+      var price = productElement.getAttribute('data-price');
+
+      // Return the product information
+      return {
+        category: category,
+        name: name,
+        price: price
+        // Add more details if needed
+      };
+    } else {
+      // Return a default value or handle the case where the product is not found
+      return {
+        category: "Unknown",
+        name: "Unknown",
+        price: "Unknown"
+      };
+    }
+  }
+
+  // Function to update the UI with wishlist items
+  function updateWishlistUI(wishlist) {
+    // Add logic to update the UI with the wishlist items
+    var wishlistContainer = document.getElementById('wishlist-container');
+
+    if (wishlist.length > 0) {
+      wishlistContainer.innerHTML = '';
+      wishlist.forEach(function (item) {
+        var wishlistItemHTML = `
+          <div class="wishlist-item">
+            <span>${item.info.category}</span>
+            <a href="">${item.info.name}</a>
+            <h4>${item.info.price}</h4>
+            <button onclick="removeFromWishlist('${item.id}')">Remove</button>
+          </div>
+        `;
+        wishlistContainer.innerHTML += wishlistItemHTML;
+      });
+    } else {
+      wishlistContainer.innerHTML = '<p>Your wishlist is empty.</p>';
+    }
+  }
+
+  // Function to check if a product is already in the wishlist
+  function isProductInWishlist(wishlist, productId) {
+    // Check if the product is already in the wishlist
+    return wishlist.some(item => item.id === productId);
+  }
+
+ // Function to update the wishlist count in the UI
+ function updateWishlistCount() {
+  // Retrieve the wishlist from local storage
+  var wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+  // Update the wishlist count in the UI
+  var wishlistCountElement = document.querySelector('.wishlist-count');
+  if (wishlistCountElement) {
+      wishlistCountElement.textContent = wishlist.length;
+  }
+
+}
+</script>
+
+    <!-- Custom Script -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

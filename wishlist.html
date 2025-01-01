@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Glide js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.css">
+    <!-- Custom StyleSheet -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>AMH STORE </title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+      <!-- Top Nav -->
+      <div class="top-nav">
+        <div class="container d-flex">
+          
+          <ul class="d-flex">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="navigation">
+        <div class="nav-center container d-flex">
+        <a href="indexx.html" class="logo"><h1> AMH </h1></a>
+
+          <ul class="nav-list d-flex">
+            <li class="nav-item">
+              <a href="indexx.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="product.html" class="nav-link">Shop</a>
+            </li>
+            <li class="nav-item">
+            <a href="#terms" class="nav-link">Terms</a>
+            </li>
+            <li class="nav-item">
+              <a href="#about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">Contact</a>
+            </li>
+            <li class="icons d-flex">
+            <a href="login.html" class="icon">
+              <i class="bx bx-user"></i>
+            </a>
+            <div class="icon">
+              <i class="bx bx-search"></i>
+            </div>
+            <a href="./wishlist.html" class="icon">
+              <i class="bx bx-heart"></i>
+              <span class="d-flex">0</span>
+            </a>
+            <a href="cart.html" class="icon">
+              <i class="bx bx-cart"></i>
+              <span class="d-flex">0</span>
+            </a>
+          </li>
+          </ul>
+
+          <div class="icons d-flex">
+            <a href="login.html" class="icon">
+              <i class="bx bx-user"></i>
+            </a>
+            <div class="icon">
+              <i class="bx bx-search"></i>
+            </div>
+            <div class="icon">
+              <a href="wishlist.html">
+                <i class="bx bx-heart"></i>
+              </a>
+              <span class="d-flex">0</span>
+            </div>
+            <a href="cart.html" class="icon">
+              <i class="bx bx-cart"></i>
+              <span class="d-flex">0</span>
+            </a>
+          </div>
+
+          <div class="hamburger">
+            <i class="bx bx-menu-alt-left"></i>
+          </div>
+        </div>
+      </div>
+      <div id="wishlist-container"></div>
+    
+    </header>
+   
+
+
+    
+
+    <!-- Contact -->
+    <section class="section contact">
+      <div class="row">
+        <div class="col">
+          <h2>EXCELLENT SUPPORT</h2>
+          <p>We love our customers and they can reach us any time
+          of day we will be at your service 24/7</p>
+          <a href="" class="btn btn-1">Contact</a>
+        </div>
+        <div class="col">
+          <form action="">
+            <div>
+              <input type="email" placeholder="Email Address">
+            <a href="">Send</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="row">
+        <div class="col d-flex">
+          <h4>INFORMATION</h4>
+          <a href="">About us</a>
+          <a href="">Contact Us</a>
+          <a href="">Term & Conditions</a>
+          <a href="">Shipping Guide</a>
+        </div>
+        <div class="col d-flex">
+          <h4>USEFUL LINK</h4>
+          <a href="">Online Store</a>
+          <a href="">Customer Services</a>
+          <a href="">Promotion</a>
+          <a href="">Top Brands</a>
+        </div>
+        <div class="col d-flex">
+          <span><i class='bx bxl-facebook-square'></i></span>
+          <span><i class='bx bxl-instagram-alt' ></i></span>
+          <span><i class='bx bxl-github' ></i></span>
+          <span><i class='bx bxl-twitter' ></i></span>
+          <span><i class='bx bxl-pinterest' ></i></span>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Retrieve the wishlist from local storage
+      var wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+      
+      // Get the container where wishlist items will be displayed
+      var wishlistContainer = document.getElementById('wishlist-container');
+  
+      // Debugging output
+      console.log('Wishlist:', wishlist);
+      console.log('Container:', wishlistContainer);
+  
+      // Check if there are items in the wishlist
+      if (wishlist.length > 0) {
+          // Iterate through each item in the wishlist
+          wishlist.forEach(function (item) {
+              // Generate HTML for each wishlist item
+              var wishlistItemHTML = `
+                  <div class="wishlist-item">
+                      <span>${item.info.category}</span>
+                      <a href="">${item.info.name}</a>
+                      <h4>${item.info.price}</h4>
+                      <button onclick="removeFromWishlist('${item.id}')">Remove</button>
+                  </div>
+              `;
+  
+              // Append the wishlist item HTML to the container
+              wishlistContainer.innerHTML += wishlistItemHTML;
+          });
+      } else {
+          // If the wishlist is empty, display a message
+          wishlistContainer.innerHTML = '<p>Your wishlist is empty.</p>';
+      }
+      
+      // Function to remove a product from the wishlist
+      function removeFromWishlist(productId) {
+          // Add your removeFromWishlist logic here
+          var wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  
+          wishlist = wishlist.filter(item => item.id !== productId);
+  
+          // Update the wishlist count in the UI
+          updateWishlistCount(wishlist.length);
+  
+          // Save the updated wishlist to local storage
+          localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  
+          // Update the wishlist UI
+          updateWishlistUI(wishlist);
+      }
+  
+      // Function to update the wishlist count in the UI
+      function updateWishlistCount(count) {
+          // Update the wishlist count in the UI
+          var wishlistCountElement = document.querySelector('.wishlist-count');
+          if (wishlistCountElement) {
+              wishlistCountElement.textContent = count;
+          }
+      }
+  
+      // Function to update the UI with wishlist items
+      function updateWishlistUI(wishlist) {
+          // Add logic to update the UI with the wishlist items
+          var wishlistContainer = document.getElementById('wishlist-container');
+  
+          if (wishlist.length > 0) {
+              wishlistContainer.innerHTML = '';
+              wishlist.forEach(function (item) {
+                  var wishlistItemHTML = `
+                      <div class="wishlist-item">
+                          <span>${item.info.category}</span>
+                          <a href="">${item.info.name}</a>
+                          <h4>${item.info.price}</h4>
+                          <button onclick="removeFromWishlist('${item.id}')">Remove</button>
+                      </div>
+                  `;
+                  wishlistContainer.innerHTML += wishlistItemHTML;
+              });
+          } else {
+              wishlistContainer.innerHTML = '<p>Your wishlist is empty.</p>';
+          }
+      }
+  </script>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
+  <script src="./script.js"></script>
+  <script src="./wishlist.js"></script>
+</html>

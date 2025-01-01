@@ -1,0 +1,25 @@
+// User model
+public class User
+{
+    public int UserId { get; set; }
+    public string Username { get; set; }
+    public string Password { get; set; }
+}
+
+// Product model
+public class Product
+{
+    public int ProductId { get; set; }
+    public string Name { get; set; }
+    public decimal Price { get; set; }
+    // Add more properties as needed
+}
+
+// Order model
+public class Order
+{
+    public int OrderId { get; set; }
+    public int UserId { get; set; }
+    public List<Product> Products { get; set; }
+    // Add more properties as needed
+}
