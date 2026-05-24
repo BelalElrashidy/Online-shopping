@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.css">
     <!-- Custom StyleSheet -->
     <link rel="stylesheet" href="./css/styles.css" />
-    <title>AMH STORE </title>
+    <title>F90 Store </title>
   </head>
   <body>
     <!-- Header -->
@@ -33,7 +33,7 @@
       </div>
       <div class="navigation">
         <div class="nav-center container d-flex">
-        <a href="indexx.html" class="logo"><h1> AMH </h1></a>
+        <a href="indexx.html" class="logo"><h1> F90 </h1></a>
 
           <ul class="nav-list d-flex">
             <li class="nav-item">
@@ -60,11 +60,11 @@
             </div>
             <a href="./wishlist.html" class="icon">
               <i class="bx bx-heart"></i>
-              <span class="d-flex">0</span>
+              <span class="d-flex wishlist-count">0</span>
             </a>
             <a href="cart.html" class="icon">
               <i class="bx bx-cart"></i>
-              <span class="d-flex">0</span>
+              <span class="d-flex cart-count">0</span>
             </a>
           </li>
           </ul>
@@ -80,11 +80,11 @@
               <a href="wishlist.html">
                 <i class="bx bx-heart"></i>
               </a>
-              <span class="d-flex">0</span>
+              <span class="d-flex wishlist-count">0</span>
             </div>
             <a href="cart.html" class="icon">
               <i class="bx bx-cart"></i>
-              <span class="d-flex">0</span>
+              <span class="d-flex cart-count">0</span>
             </a>
           </div>
 
@@ -147,7 +147,7 @@
         </div>
       </div>
     </footer>
-    <script>
+    <!-- <script>
       // Retrieve the wishlist from local storage
       var wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
       
@@ -228,9 +228,10 @@
               wishlistContainer.innerHTML = '<p>Your wishlist is empty.</p>';
           }
       }
-  </script>
+  </script> -->
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
   <script src="./script.js"></script>
   <script src="./wishlist.js"></script>
+  <script src="./js/badgeCounts.js"></script>
 </html>

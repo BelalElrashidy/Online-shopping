@@ -215,7 +215,7 @@ Hero Area
 
 .hero,
 .hero .glide__slides {
-  background-color: var(--grey2);
+  /* background-color: var(--grey2); */
   position: relative;
   height: calc(100vh - 6rem);
   margin: 0 4rem;
@@ -270,6 +270,12 @@ Hero Area
   width: 55rem;
   opacity: 0;
   transition: all 1000ms ease-in-out;
+}
+
+.center .img1 {
+  width: 100%;
+  right: -10%;
+  bottom: -60%;
 }
 
 .center .right img.img1 {

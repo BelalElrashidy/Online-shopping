@@ -1,4 +1,3 @@
-const newarr = document.getElementById("new-arr");
 const addToCartButton = document.getElementById("addToCart");
 let productId = 1; // Replace with the actual product ID
 const quantity = 1; // Default quantity
@@ -66,7 +65,10 @@ async function addToCart(id) {
       '<p style="color: red;">An error occurred. Please try again later.</p>';
   }
 }
-async function getProducts() {
+async function loadAllProducts() {
+  const container = document.getElementById("all-products-list");
+  if (!container) return;
+
   try {
     const response = await fetch("http://localhost:3000/products", {
       method: "GET",
@@ -74,71 +76,58 @@ async function getProducts() {
     });
 
     const data = await response.json();
+    if (!response.ok) {
+      console.error("Failed to load products", data);
+      return;
+    }
 
-    if (response.ok) {
-      // message.style.color = 'green';
-      // message.textContent = data.message;
-      console.log(data);
-      for (let index = 0; index < data.length; index++) {
-        const element = data[index];
-        console.log(element);
-        newarr.innerHTML += `<a href="productDetails.html?id=${
-          element.product_id
-        }" class="product-item">
+    container.innerHTML = "";
+
+    data.forEach((product, index) => {
+      const imgName =
+        index > 7
+          ? "h" + (index - 7) + ".jpeg"
+          : index % 2
+          ? "sh" + (index + 1) + ".jpeg"
+          : "product-" + (index + 1) + ".jpg";
+
+      const itemHtml = `
+        <a href="productDetails.html?id=${
+          product.product_id
+        }" class="product-item" data-id="${
+        product.product_id
+      }" data-category="${
+        product.category_name || "MEN'S CLOTHES"
+      }" data-name="${product.product_name}" data-price="${
+        product.product_price
+      }">
           <div class="overlay">
             <div class="product-thumb">
-              <img src="./images/${
-                index > 7
-                  ? "h" + (index - 7) + ".jpeg"
-                  : index % 2
-                  ? "sh" + (index + 1) + ".jpeg"
-                  : "product-" + (index + 1) + ".jpg"
-              }" alt="${element.product_name}" />
+              <img src="./images/${imgName}" alt="${product.product_name}" />
             </div>
           </div>
           <div class="product-info">
-            <span>MEN'S CLOTHES</span>
-            <span>${element.product_name}</span>
-            <h4>${element.product_price} L.E </h4>
+            <span>${product.category_name || "MEN'S CLOTHES"}</span>
+            <span>${product.product_name}</span>
+            <h4>${product.product_price} L.E</h4>
           </div>
           <ul class="icons">
             <li><i class="bx bx-heart" onclick="event.preventDefault(); event.stopPropagation(); addToWishlist(${
-              element.product_id
+              product.product_id
             })"></i></li>
             <li><i class="bx bx-cart" onclick="event.preventDefault(); event.stopPropagation(); addToCart(${
-              element.product_id
+              product.product_id
             })"></i></li>
           </ul>
-        </a>`;
-      }
-      // localStorage.setItem('token', data.token); // Store token in localStorage
-      // Redirect to a protected page if necessary
-      // window.location.href = '/indexx.html';
-    }
+        </a>
+      `;
+
+      container.insertAdjacentHTML("beforeend", itemHtml);
+    });
   } catch (error) {
-    // message.style.color = 'red';
-    // message.textContent = 'An error occurred. Please try again.';
-    console.error("Error:", error);
+    console.error("Error loading products", error);
   }
 }
 
-getProducts();
-
-// <div class="product-item">
-//           <div class="overlay">
-//             <a href="" class="product-thumb">
-//               <img src="./images/IMG_2713.JPG" alt="" />
-//             </a>
-//           </div>
-//           <div class="product-info">
-//             <span>MEN'S CLOTHES</span>
-//             <a href="">Mint Green  Versace Film Titles suit</a>
-//             <h4>680 L.E </h4>
-//           </div>
-//           <ul class="icons">
-//             <li><i class="bx bx-heart"></i></li>
-
-//             <li><i class="bx bx-cart"></i></li>
-//           </ul>
-//         </div>
-//       </div>
+// Load products for the products page when ready
+document.addEventListener("DOMContentLoaded", loadAllProducts);

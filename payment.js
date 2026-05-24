@@ -10,7 +10,7 @@ async function getCartTotal() {
 
         const data = await response.json();
         if (response.ok) {
-            console.log(`Cart Total: $${data.total_price.toFixed(2)}`);
+            
             return data.total_price;
         } else {
             console.error(data.error || 'Failed to fetch cart total');
